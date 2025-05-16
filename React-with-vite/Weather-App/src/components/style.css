@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 40%;
+
+  background-color: rgb(65, 142, 146);
+  border-radius: 20px;
+  box-shadow: 8px 8px 12px 12px;
+}
+.input-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+img {
+  height: 240px;
+  width: 240px;
+}
+.result-main {
+  box-shadow: 3px red;
+  background-color: azure;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  height: 480px;
+}
+.description {
+  width: 25%;
+  margin: auto;
+}
