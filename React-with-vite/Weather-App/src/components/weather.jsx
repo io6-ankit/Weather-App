@@ -50,6 +50,9 @@ const Weather = () => {
         }}
       >
         <div className="container">
+          <h1 style={{ margin: "auto", width: "38%", color: "#0a3b0a" }}>
+            Weather App
+          </h1>
           <div className="input-section">
             <input
               style={{

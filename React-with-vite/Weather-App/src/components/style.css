@@ -5,8 +5,8 @@
 }
 .container {
   width: 40%;
-
-  background-color: rgb(65, 142, 146);
+  /* background-color:b; */
+  background-color: rgb(185, 228, 230);
   border-radius: 20px;
   box-shadow: 8px 8px 12px 12px;
 }
