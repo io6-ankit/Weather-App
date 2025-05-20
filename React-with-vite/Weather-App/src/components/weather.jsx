@@ -8,6 +8,7 @@ import rain from "../assets/images/rain.png";
 import mist from "../assets/images/mist.png";
 import SearchIcon from "@mui/icons-material/Search";
 import err from "../assets/images/error.webp";
+import { Box, Grid, Typography, TextField, IconButton } from "@mui/material";
 import "./style.css";
 import { useState } from "react";
 const Weather = () => {
@@ -40,44 +41,63 @@ const Weather = () => {
   console.log(data, "data");
   return (
     <>
-      <div
-        style={{
+      <Grid
+        container
+        direction="row"
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
           backgroundColor: "rgb(68, 65, 65)",
           height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        <div className="container">
-          <h1 style={{ margin: "auto", width: "38%", color: "#0a3b0a" }}>
-            Weather App
-          </h1>
-          <div className="input-section">
-            <input
-              style={{
-                height: "40px",
-                width: "244px",
-                borderRadius: "40px",
-                fontSize: "28px",
+        <Box className="container">
+          <Grid
+            container
+            direction="row"
+            style={{
+              // display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              variant="h2"
+              sx={{
+                fontSize: { xs: "15px", sm: "20px", md: "30px", lg: "35px" },
               }}
-              type="text"
-              placeholder="Enter City, Country"
-              onChange={handleClick}
-            />
-            <button
-              style={{
-                height: "43px",
-                width: "43px",
-                borderRadius: "50%",
-                marginLeft: "10px",
-              }}
-              onClick={My_fun}
-              name="btn"
             >
-              <SearchIcon />
-            </button>
-          </div>
+              Weather App
+            </Typography>
+          </Grid>
+          <Box className="input-section">
+            <Grid
+              className="input-field"
+              sx={{
+                backgroundColor: "white",
+                fontSize: {
+                  xs: "15px",
+                  sm: "20px",
+                  md: "30px",
+                  lg: "35px",
+                },
+              }}
+            >
+              <TextField
+                // label="Size"
+                id="outlined-size-small"
+                // defaultValue="Small"
+                size="small"
+                placeholder="Enter City, Country"
+                onChange={handleClick}
+                className="textfield"
+                sx={{}}
+              />
+              <IconButton aria-label="search" size="small" onClick={My_fun}>
+                <SearchIcon />
+              </IconButton>
+            </Grid>
+          </Box>
           <div
             style={{
               display: "flex",
@@ -110,11 +130,12 @@ const Weather = () => {
                 {data.name}
               </h2>
               <div
+                className="image"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginTop: "20px",
+                  // marginTop: "2px",
                 }}
               >
                 {data.weather[0].main === "Clouds" && (
@@ -133,17 +154,41 @@ const Weather = () => {
                   <img src={haze} alt="Hazy" />
                 )}
               </div>
+              {/* <Box className="main"> */}
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
+                className="temp"
               >
-                <h3 style={{ marginLeft: "50px", fontSize: "35px" }}>
+                <h3
+                  style={{
+                    marginLeft: "50px",
+                    fontSize: {
+                      xs: "15px",
+                      sm: "10px",
+                      md: "30px",
+                      lg: "35px",
+                    },
+                  }}
+                  // className="temp"
+                >
                   {Math.trunc(data.main.temp) / 10}°C
                 </h3>
-                <p style={{ fontSize: "25px", marginLeft: "20px" }}>
+
+                <p
+                  style={{
+                    fontSize: {
+                      xs: "25px",
+                      sm: "20px",
+                      md: "30px",
+                      lg: "35px",
+                    },
+                    marginLeft: "10px",
+                  }}
+                >
                   {data.weather[0].description}
                 </p>
               </div>
@@ -153,18 +198,31 @@ const Weather = () => {
                   alignItems: "center",
                   justifyContent: "center",
                 }}
+                className="wind"
               >
-                <h3 style={{ fontSize: "35px" }}>{data.wind.speed}Km/h</h3>
-                <p style={{ fontSize: "25px", marginLeft: "20px" }}>
+                <h3>{data.wind.speed}Km/h</h3>
+                <p
+                  style={{
+                    fontSize: {
+                      xs: "15px",
+                      sm: "15px",
+                      md: "30px",
+                      lg: "35px",
+                    },
+                    marginLeft: "10px",
+                  }}
+                >
                   Wind speed
                 </p>
               </div>
+              {/* </Box> */}
             </div>
           ) : (
             ""
           )}
-        </div>
-      </div>
+        </Box>
+        {/* </div> */}
+      </Grid>
     </>
   );
 };
