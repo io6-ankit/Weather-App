@@ -99,6 +99,7 @@ const Weather = () => {
             </Grid>
           </Box>
           <div
+            className="error"
             style={{
               display: "flex",
               alignItems: "center",
@@ -111,7 +112,7 @@ const Weather = () => {
               <div className="errorPage">
                 <h2>Opps</h2>
                 <p>{error}</p>
-                <img src={err} />
+                <img src={err} className="error-img" />
               </div>
             ) : (
               ""

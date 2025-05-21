@@ -27,7 +27,7 @@ img {
   background-color: azure;
   width: 80%;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 10px;
   height: 480px;
 }
 .description {
@@ -82,7 +82,7 @@ h5 {
   }
   .container {
     width: 80%;
-    height: 100vh;
+    /* height: 80vh; */
   }
   /* .image {
     width: 100%;
@@ -93,8 +93,8 @@ h5 {
     margin-top: "20px";
   } */
   img {
-    height: 60vh;
-    width: 60%;
+    height: 30vh;
+    width: 30%;
   }
   .temp {
     display: "flex";
@@ -107,5 +107,16 @@ h5 {
     align-items: "center";
     justify-content: "center";
     font-size: 15px;
+  }
+  .error {
+    display: "flex";
+    align-items: center;
+
+    justify-content: "center";
+    margin-top: "20px";
+    margin-left: "25px";
+  }
+  .error-img {
+    margin-left: 85px;
   }
 }
